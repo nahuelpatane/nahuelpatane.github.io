@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="generator" content="ReText 4.1.2">
+<title>Tutorial</title>
+</head>
+<body>
+<h1>Preprocesadores Sass &amp; LESS</h1>
+<h2>Introducción</h2>
+<p>Hoy día, CSS es muy primitivo e incompleto. Crear una función, reutilizar o heredar un valor es difícil de conseguir. En grandes proyectos, el mantenimiento de estos es un gran problema. Mientras que también la programación web está evolucionando, CSS no lo está haciendo.</p>
+<p>Los preprocesadores son una herramienta que nos permite escribir pseudocódigo CSS que luego será convertido a CSS real. Este pseudocódigo
+se conforma de variables, condiciones, bucles o funciones. El objetivo de este pseudocódigo es tener un código más sencillo de mantener y editar.</p>
+<p>Sass y LESS nos entregándonos características que nos permiten escribir estilos de manera amigable, divertida y estructurada.</p>
+<h2>Instalación</h2>
+<h3>Sass</h3>
+<p>Para instalar Sass, es necesario tener instalado Ruby(2.0).</p>
+<blockquote>
+<p>$ <strong>sudo apt-get install ruby</strong></p>
+</blockquote>
+<p>Y una vez instalado se instala Sass:</p>
+<blockquote>
+<p>$ <strong>sudo gem install sass</strong></p>
+</blockquote>
+<h3>LESS</h3>
+<p>En el caso de LESS, se debe tener instalado Node. Una vez instalado:</p>
+<blockquote>
+<p>$ <strong>npm install -g less</strong></p>
+</blockquote>
+<h2>Utilización</h2>
+<h3>Variables</h3>
+<p>Piense en las variables como una forma de almacenar la información que desea reutilizar a lo largo de su hoja de estilo. Puede almacenar cosas como colores, pilas de fuentes o cualquier valor de CSS que crea que va a querer reutilizar</p>
+<p><img alt="alt text" src="variable.png" title="Variable"></p>
+<h3>Nesting</h3>
+<p>Sass te permitirá anidar tus selectores CSS de una manera que siga la misma jerarquía visual de tu HTML. Tenga en cuenta que las reglas excesivamente anidadas resultarán en CSS sobrecalificado que podría ser difícil de mantener y generalmente se considera una mala práctica.</p>
+<p><img alt="alt text" src="nesting.png" title="Nesting"></p>
+<h3>Mixins</h3>
+<p>Algunas cosas en CSS son un poco tediosas de escribir, especialmente con CSS3 y los muchos prefijos de proveedor que existen. Un mixin le permite crear grupos de declaraciones CSS que desea reutilizar en su sitio. Incluso puede pasar valores para hacer su mixin más flexible.</p>
+<p><img alt="alt text" src="mixins.png" title="Variable"></p>
+<h3>Operations</h3>
+<p>Hacer matemáticas en tu CSS es muy útil. Sass tiene un puñado de operadores matemáticos estándar como +, -, *, / y %. En nuestro ejemplo vamos a hacer algunas matemáticas simples para calcular anchuras para un lado y artículo.</p>
+<p><img alt="alt text" src="operations.png" title="Operations"></p>
+<h3>Funciones</h3>
+<p>Funciones son pequeñas piezas de código que toman argumentos y que a través de alguna operación, obtienen, retornan o transforman un valor, sea numérico, color o una cadena, y de igual forma como en CSS, estas funciones las podemos usar como valores en las propiedades, pero también para realizar otras operaciones.</p>
+<p><img alt="alt text" src="funciones.png" title="Funciones"></p>
+<h3>Extending styles</h3>
+<p>@extend es una característica de Sass que permite que las clases compartan un conjunto de propiedades entre sí. Los selectores que extienden una clase en Sass tendrán su selector incluido junto a la clase que se está ampliando, lo que dará como resultado una lista separada por comas.</p>
+<p><img alt="alt text" src="extending.png" title="Extending styles"></p>
+<h3>Color functions</h3>
+<p>Sass viene con funciones que se pueden aplicar fácilmente a los colores en sus propiedades de CSS. Estas funciones, cuando se usan correctamente, pueden ser increíblemente poderosas. Quitan la picadura de elegir y manipular colores. Cuando se usan con variables, pueden acelerar el desarrollo drásticamente.</p>
+<p><img alt="alt text" src="color.png" title="Color functions"></p>
+<h2>¿Cómo convierto mi Sass / LESS a formato CSS?</h2>
+<h3>SASS</h3>
+<p>Se refiere a la forma más básica de obtener nuestros archivos precompilados con la extensión “.css”, lo hacemos en línea de comandos o Shell de la siguiente manera:</p>
+<blockquote>
+<p><strong>$ sass --watch archivo_origen.scss:archivo_destino.css</strong></p>
+</blockquote>
+<p>También en Sass manejo diferentes especificaciones para el resultado final, en un ambiente de producción es mejor tener un archivo con nuestros estilos de manera que ocupe el menor espacio y consumo. En Sass se le llama “compressed” y la linea de comandos es la siguiente:</p>
+<blockquote>
+<p>**$ sass --watch --style compressed archivo_origen.scss:archivo_destino.css</p>
+</blockquote>
+<h3>LESS</h3>
+<p>Existen varias formas:</p>
+<p>1) A través de la terminal, utilizando el código:</p>
+<blockquote>
+<p>$ <strong>lessc styles.css</strong></p>
+</blockquote>
+<p>2) Usando less en el navegador</p>
+<blockquote>
+<p><strong>$ link rel="stylesheet/less" type="text/css" href="styles.less"</strong></p>
+<p><strong>$ script src=”less.js”</strong></p>
+</blockquote>
+<p>Este método solo es recomendado para fases de desarrollo y no para la página final ya que por este medio se aumenta el tiempo de carga de la página y se hace más lento compilar.</p>
+<p>3) Utilizando GUIs especificas de LESS/SASS  como son Crunch 2, SimpLESS, Koala, etc. </p>
+<p>4) O en el caso que esté alguna IDE, existen plugins que al guardar el archivo LESS/SASS automaticamente te lo transforma en un archivo CSS.</p>
+</body>
+</html>
